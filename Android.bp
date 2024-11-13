@@ -109,6 +109,13 @@ cc_defaults {
             ],
         },
 
+        loongarch64: {
+            local_include_dirs: [
+                "common/loongarch",
+                "encoder/loongarch",
+            ],
+        },
+
         riscv64: {
             local_include_dirs: [
                 "common/riscv",
@@ -355,6 +362,15 @@ cc_library_static {
             ],
         },
 
+        loongarch64: {
+            local_include_dirs: [
+                "common/loongarch",
+            ],
+            srcs: [
+                "decoder/loongarch/ih264d_function_selector.c",
+            ],
+        },
+
         riscv64: {
             local_include_dirs: [
                 "common/riscv",
@@ -568,6 +584,12 @@ cc_library_static {
             ],
         },
 
+        loongarch64: {
+            srcs: [
+                "encoder/loongarch/ih264e_function_selector.c",
+            ],
+        },
+
         riscv64: {
             srcs: [
                 "encoder/riscv/ih264e_function_selector.c",
@@ -722,6 +744,16 @@ cc_library_static {
             ],
         },
 
+        loongarch64: {
+            local_include_dirs: [
+                "encoder/loongarch/svc",
+            ],
+
+            srcs: [
+                "encoder/loongarch/svc/isvce_function_selector.c",
+            ],
+        },
+
         riscv64: {
             local_include_dirs: [
                 "encoder/riscv/svc",
@@ -853,6 +885,16 @@ cc_library_static {
                 "decoder/arm/svc/isvcd_residual_resamp_neon.c",
             ],
         },
+
+        loongarch64: {
+            local_include_dirs: [
+                "decoder/loongarch/svc",
+            ],
+
+            srcs: [
+                "decoder/loongarch/svc/isvcd_function_selector.c",
+            ],
+        }, 
 
         riscv64: {
             local_include_dirs: [
